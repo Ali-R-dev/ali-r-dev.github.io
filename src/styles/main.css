@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  body{
+  counter-reset: section;
+  /* @apply font-roboto */
+  }
+  .container_{
+   @apply p-5 m-0 h-full w-full
+   box-border
+   border-2 border-gray-950
+  }
+  /* header section */
+  header{
+    @apply box-border
+    relative
+    flex flex-row items-center
+  }
+  #logo{
+    @apply box-border
+  }
+  nav {
+    @apply
+    hidden sm:block
+    fixed top-5 left-1/4
+    z-10
+    
+  }
+  ul {
+    @apply
+    list-none
+  }
+  li {
+    @apply px-4 py-2
+    inline-block
+    font-bold
+    text-lg
+  }
+
+  li a {
+    @apply flex flex-col gap-0
+  }
+  li .idx{
+    @apply text-[0.6rem] self-end
+    leading-none
+  }
+  li .idx::before{
+    counter-increment: section;
+    content:"0"counter(section) ;
+    @apply opacity-75
+  }
+  li .nav-item-title {
+    @apply m-0 p-0
+    leading-none
+    whitespace-nowrap
+  }
+  li .nav-item-title::before{
+    @apply content-[attr(before)]
+  }
+
+  /* mobile side bar */
+  .mbl-overlay-container {
+    @apply block sm:hidden
+  }
+  #sideBar-container{
+    top: 0;
+    left: 0;
+    @apply w-screen h-screen
+    flex flex-row
+     z-20 absolute
+  }
+  #btnClose {
+    @apply rounded-full p-4
+    hover:bg-[#e5e5e5]
+    /* hover:animate-spin */
+  }
+
+  #sideBar{
+    @apply p-4
+    w-[80%] h-full
+    bg-[#efefef]
+  }
+  #overlay{
+    @apply w-[20%] h-full
+    bg-transparent
+    backdrop-blur-sm
+  }
+  #mbl-nav > ul > li{
+    @apply block
+     my-2
+  }
+
+  /* end header */
+
+
+  /* start main */
+  main{
+    @apply border-2 border-black
+  }
+  main section {
+    @apply border-2 border-black
+    h-screen overflow-auto
+  }
+}
+
+  
