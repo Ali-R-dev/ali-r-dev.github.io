@@ -13,7 +13,7 @@ document.querySelectorAll('#mbl-nav .nav-item-title')
 }))
 
     
-document.querySelector('#btnClose').addEventListener('click',function(e) {
+document.querySelector('#overlay').addEventListener('click',function(e) {
     document.querySelector('#sideBar-container').classList.add('invisible')
     
 })
