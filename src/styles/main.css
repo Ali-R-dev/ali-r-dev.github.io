@@ -1,32 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-
+  * {
+    box-sizing: border-box;
+  }
   body{
   counter-reset: section;
-  /* @apply font-roboto */
+  color: #ffffff;
+  background: #131a25;
   }
   .container_{
-   @apply p-5 m-0 h-full w-full
-   box-border
+   @apply p-0 m-0 h-full w-full
    border-2 border-gray-950
   }
   /* header section */
   header{
-    @apply box-border
-    relative
-    flex flex-row items-center
-  }
-  #logo{
-    @apply box-border
+    background: rgba(255,255,255,0);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0);
+    @apply
+    flex flex-row
+    items-center
+    w-full h-[70px]
+    fixed top-0
+    z-30
   }
   nav {
     @apply
     hidden sm:block
-    fixed top-5 left-1/4
-    z-10
+    text-center
+    w-full
     
   }
   ul {
@@ -45,12 +52,12 @@
   }
   li .idx{
     @apply text-[0.6rem] self-end
-    leading-none
+    leading-none font-roboto-mono
   }
   li .idx::before{
     counter-increment: section;
     content:"0"counter(section) ;
-    @apply opacity-75
+    @apply opacity-100
   }
   li .nav-item-title {
     @apply m-0 p-0
@@ -75,18 +82,21 @@
   #btnClose {
     @apply rounded-full p-4
     hover:bg-[#e5e5e5]
-    /* hover:animate-spin */
   }
 
   #sideBar{
     @apply p-4
-    w-[80%] h-full
+    w-[85%] h-full
     bg-[#efefef]
+    text-black font-light
   }
   #overlay{
-    @apply w-[20%] h-full
+    background: rgba(255,255,255,0.1);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    border: 1px solid rgba(255,255,255,0.05);
+    @apply w-[15%] h-full
     bg-transparent
-    backdrop-blur-sm
   }
   #mbl-nav > ul > li{
     @apply block
@@ -98,11 +108,15 @@
 
   /* start main */
   main{
-    @apply border-2 border-black
+    @apply
+    border-2 border-black
   }
   main section {
     @apply border-2 border-black
-    h-screen overflow-auto
+    h-screen pt-16
+  }
+  #home {
+    @apply relative
   }
 }
 

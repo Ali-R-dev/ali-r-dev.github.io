@@ -3,26 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  -->   
+    <meta name="title" content="Ali Raza - Full Stack React Web Developer">
+    <meta name="description" content="This is a personal portfolio website">
+    <title>Ali Raza - Full Stack React Web Developer</title>
+    <!-- styles -->   
+
     <link href="./dist/main.css" rel="stylesheet">
-    <title>Ali Raza - Software Engineer</title>
+
 </head>
-<body>
+<body >
     <div class="container_">
         <!-- header -->
         <header>
             <div class="mbl-overlay-container">
-                <button class="border-2 border-red-400 mr-3" id="btnSideBar">
+                <button class="pt-2 mt-2 ms-6 items-center w-full h-full" id="btnSideBar">
                     <?xml version="1.0" encoding="utf-8"?>
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="Menu / Menu_Duo_LG">
-                    <path id="Vector" d="M3 15H21M3 9H21" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg width="24" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="">
+                    <path id="Vector" d="M3 15H21M3 9H21" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </g>
                     </svg>
                 </button>
                 <div id="sideBar-container" class="invisible">
                     <div id="sideBar">
                         <button id="btnClose" class="">
-                            <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                            <?xml version="1.0" encoding="utf-8"?>
                             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16 8L8 16M8.00001 8L16 16" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -30,22 +36,22 @@
                         <div id="mbl-nav">
                             <ul>
                                 <li>
-                                    <a href="">
+                                    <a href="#home">
                                         <span class="nav-item-title" before="// ">home</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="#expertise">
                                         <span class="nav-item-title" before="// ">expertise</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="#projects">
                                         <span class="nav-item-title" before="// ">projects</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="#contact">
                                         <span class="nav-item-title" before="// ">contact</span>
                                     </a>
                                 </li>
@@ -55,31 +61,30 @@
                     </div>
                     <div id="overlay"></div>
                 </div>
-                
             </div>
-            <h1 id="logo" class="text-4xl mx-2">Ali._</h1>
+            <h1 id="logo" class="text-5xl mx-4 text-[#6de7fd] ">Ali._</h1>
             <nav>
                 <ul>
                     <li>
-                        <a href="">
+                        <a href="#home">
                             <span class="idx"></span>
                             <span class="nav-item-title" before="// ">home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="#expertise">
                             <span class="idx"></span>
                             <span class="nav-item-title" before="// ">expertise</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="#projects">
                             <span class="idx"></span>
                             <span class="nav-item-title" before="// ">projects</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="#contact">
                             <span class="idx"></span>
                             <span class="nav-item-title" before="// ">contact</span>
                         </a>
@@ -89,13 +94,30 @@
         </header>
         <!-- main area -->
         <main>
-            <section class="">
-                <h1>Ali Raza</h1>
-                <h5>Full stack Software Develpoer</h5>
+            <section class="flex flex-col justify-center items-center" id="home">
+                <h1 class="text-4xl sm:text-6xl text-center mt-4">Ali Raza</h1>
+                <h5 class="text-xl sm:text-3xl text-center">Full stack Software Develpoer</h5>
+                <!-- <a href="#expertise" class="absolute bottom-5">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 6V14" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 11L12 14L9 11" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a> -->
+            <a href="#expertise" class="absolute bottom-1 rounded-xl overflow-auto p-8">
+                <div class="flex justify-center">
+                    <div class="animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-violet-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </div>
+              </div>
+            </a>
+                
             </section>
-            <section>expertise</section>
-            <section>projects</section>
-            <section>contact</section>
+            <section id="expertise">expertise</section>
+            <section id="projects">projects</section>
+            <section id="contact">contact</section>
         </main>
     </div>
     <script src="./src/scripts/main.js"></script>
