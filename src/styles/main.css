@@ -5,26 +5,23 @@
 
 @layer components {
   * {
-    box-sizing: border-box;
+    @apply box-border
   }
   body{
   counter-reset: section;
-  color: #ffffff;
-  background: #131a25;
+  @apply bg-[#131a25] text-[#ffffff]
   }
   .container_{
-   @apply p-0 m-0 h-full w-full
-   border-2 border-gray-950
+   @apply px-[20px] m-0 h-full w-full
   }
   /* header section */
   header{
-    background: rgba(255,255,255,0);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0);
     @apply
     flex flex-row
-    items-center
+    items-center bg-[#ffffff00]
+    border border-[#ffffff00]
     w-full h-[70px]
     fixed top-0
     z-30
@@ -91,7 +88,7 @@
     text-black font-light
   }
   #overlay{
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.102);
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
     border: 1px solid rgba(255,255,255,0.05);
@@ -105,18 +102,81 @@
 
   /* end header */
 
+  .cursor{
+    position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #8b5cf6;
+  /* margin: -3px; */
+  border-radius: 80%; 
+  backface-visibility: hidden;
+  }
+  @keyframes wave {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
 
   /* start main */
-  main{
-    @apply
-    border-2 border-black
-  }
+  /* main{
+    
+  } */
   main section {
-    @apply border-2 border-black
-    h-screen pt-16
+    @apply h-screen pt-16
+    border border-black
   }
   #home {
-    @apply relative
+    @apply relative border-0
+  }
+  #heroTitle{
+    animation: toFill 0.5s ease forwards 3s;
+  }
+  @keyframes line-anim {
+    0% {
+      stroke:#2C49D8 ;
+      stroke-dashoffset: 100%;
+    }
+    50%{
+      stroke:#088da5;
+      stroke-dashoffset: 50%;
+    }
+    100% {
+      stroke:white;
+        stroke-dashoffset: 0;
+    }
+  }
+  @keyframes toFill {
+    0%{
+        fill: transparent;
+    }
+    /* 20%{
+      fill:transparent
+    }
+    40%{
+      fill:transparent
+    }
+    60%{
+      fill:transparent
+    }
+    80%{
+      fill:transparent
+    } */
+    100% {
+        fill:white;
+    }
+  }
+  .exp-wrapper{
+    @apply flex flex-row gap-0
+
+    }
+  /* expertise */
+  .exp-item {
+    @apply w-[200px] h-[200px] border-2 border-l-white
   }
 }
 

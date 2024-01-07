@@ -546,33 +546,31 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-* {
+*{
   box-sizing: border-box;
 }
 
 body{
   counter-reset: section;
-  color: #ffffff;
-  background: #131a25;
+  --tw-bg-opacity: 1;
+  background-color: rgb(19 26 37 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
 .container_{
   margin: 0px;
   height: 100%;
   width: 100%;
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgb(3 7 18 / var(--tw-border-opacity));
-  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* header section */
 
 header{
-  background: rgba(255,255,255,0);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0);
   position: fixed;
   top: 0px;
   z-index: 30;
@@ -580,7 +578,10 @@ header{
   height: 70px;
   width: 100%;
   flex-direction: row;
-  align-items: center
+  align-items: center;
+  border-width: 1px;
+  border-color: #ffffff00;
+  background-color: #ffffff00
 }
 
 nav{
@@ -686,7 +687,7 @@ li .nav-item-title::before{
 }
 
 #overlay{
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.102);
   -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
   border: 1px solid rgba(255,255,255,0.05);
@@ -703,17 +704,37 @@ li .nav-item-title::before{
 
 /* end header */
 
+.cursor{
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #8b5cf6;
+  /* margin: -3px; */
+  border-radius: 80%;
+  backface-visibility: hidden;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 /* start main */
 
-main{
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
+/* main{
+    
+  } */
 
 main section{
   height: 100vh;
-  border-width: 2px;
+  border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
   padding-top: 4rem;
@@ -721,10 +742,75 @@ main section{
 
 #home{
   position: relative;
+  border-width: 0px;
+}
+
+#heroTitle{
+  animation: toFill 0.5s ease forwards 3s;
+}
+
+@keyframes line-anim {
+  0% {
+    stroke:#2C49D8 ;
+    stroke-dashoffset: 100%;
+  }
+
+  50%{
+    stroke:#088da5;
+    stroke-dashoffset: 50%;
+  }
+
+  100% {
+    stroke:white;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes toFill {
+  0%{
+    fill: transparent;
+  }
+
+  /* 20%{
+      fill:transparent
+    }
+    40%{
+      fill:transparent
+    }
+    60%{
+      fill:transparent
+    }
+    80%{
+      fill:transparent
+    } */
+
+  100% {
+    fill:white;
+  }
+}
+
+.exp-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+}
+
+/* expertise */
+
+.exp-item{
+  height: 200px;
+  width: 200px;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-left-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .invisible{
   visibility: hidden;
+}
+
+.fixed{
+  position: fixed;
 }
 
 .absolute{
@@ -739,9 +825,8 @@ main section{
   bottom: 1.25rem;
 }
 
-.mx-4{
-  margin-left: 1rem;
-  margin-right: 1rem;
+.ms-4{
+  margin-inline-start: 1rem;
 }
 
 .ms-6{
@@ -752,16 +837,20 @@ main section{
   margin-top: 0.5rem;
 }
 
-.mt-4{
-  margin-top: 1rem;
-}
-
 .flex{
   display: flex;
 }
 
+.hidden{
+  display: none;
+}
+
 .h-10{
   height: 2.5rem;
+}
+
+.h-12{
+  height: 3rem;
 }
 
 .h-6{
@@ -800,8 +889,16 @@ main section{
   animation: bounce 1s infinite;
 }
 
+.flex-row{
+  flex-direction: row;
+}
+
 .flex-col{
   flex-direction: column;
+}
+
+.flex-nowrap{
+  flex-wrap: nowrap;
 }
 
 .items-center{
@@ -810,6 +907,14 @@ main section{
 
 .justify-center{
   justify-content: center;
+}
+
+.gap-0{
+  gap: 0px;
+}
+
+.gap-4{
+  gap: 1rem;
 }
 
 .overflow-auto{
@@ -822,6 +927,10 @@ main section{
 
 .rounded-xl{
   border-radius: 0.75rem;
+}
+
+.border{
+  border-width: 1px;
 }
 
 .bg-white{
@@ -850,11 +959,6 @@ main section{
   line-height: 2.5rem;
 }
 
-.text-5xl{
-  font-size: 3rem;
-  line-height: 1;
-}
-
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -863,6 +967,11 @@ main section{
 .text-\[\#6de7fd\]{
   --tw-text-opacity: 1;
   color: rgb(109 231 253 / var(--tw-text-opacity));
+}
+
+.text-violet-400{
+  --tw-text-opacity: 1;
+  color: rgb(167 139 250 / var(--tw-text-opacity));
 }
 
 .text-violet-500{
@@ -887,14 +996,17 @@ main section{
 }
 
 @media (min-width: 640px){
+  .sm\:block{
+    display: block;
+  }
+
+  .sm\:h-20{
+    height: 5rem;
+  }
+
   .sm\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
-  }
-
-  .sm\:text-6xl{
-    font-size: 3.75rem;
-    line-height: 1;
   }
 }
 
